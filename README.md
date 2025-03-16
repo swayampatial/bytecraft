@@ -65,7 +65,7 @@ Starter already has shadcn installed and configured. 👍
   - products
   - single-product
 
-### Navbar - Setup
+### Navbar - Setup 
 
 - create
 
