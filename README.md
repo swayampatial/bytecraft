@@ -718,7 +718,7 @@ main()
 ```
 
 ```sh
-node prisma/seed
+node prisma/seed  
 ```
 
 - check prisma studio
