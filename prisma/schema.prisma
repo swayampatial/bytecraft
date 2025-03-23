@@ -8,12 +8,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model TestProfile {
-id  String @id @default(uuid())
-name String
-}
-
-
 model Product {
   id           String     @id @default(uuid())
   name        String
