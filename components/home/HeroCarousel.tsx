@@ -7,41 +7,38 @@ import {
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
+import hero1 from '@/public/images/hero1.jpg';
+import hero2 from '@/public/images/hero2.jpg';
+import hero3 from '@/public/images/hero3.jpg';
+import hero4 from '@/public/images/hero4.jpg';
 
-const carouselImages = [
-  '/images/hero1.jpg',
-  '/images/hero2.jpg',
-  '/images/hero3.jpg',
-  '/images/hero4.jpg',
-];
+const carouselImages = [hero1, hero2, hero3, hero4];
 
 function HeroCarousel() {
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <Carousel className="relative">
+    <div className='hidden lg:block'>
+      <Carousel>
         <CarouselContent>
-          {carouselImages.map((image, index) => (
-            <CarouselItem key={index} className="flex justify-center">
-              <Card className="shadow-lg">
-                <CardContent className="p-2">
-                  <Image
-                    src={image}
-                    alt={`Slide ${index + 1}`}
-                    width={1200}
-                    height={600}
-                    className="w-full h-auto rounded-md object-cover"
-                    priority
-                  />
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
+          {carouselImages.map((image, index) => {
+            return (
+              <CarouselItem key={index}>
+                <Card>
+                  <CardContent className='p-2'>
+                    <Image
+                      src={image}
+                      alt='hero'
+                      className='w-full h-[24rem] rounded-md object-cover'
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            );
+          })}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-2 top-1/2 transform -translate-y-1/2" />
-        <CarouselNext className="absolute right-2 top-1/2 transform -translate-y-1/2" />
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </div>
   );
 }
-
 export default HeroCarousel;
