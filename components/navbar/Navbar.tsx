@@ -1,20 +1,41 @@
-import Logo from './Logo';
-import LinksDropdown from './LinksDropdown';
-import CartButton from './CartButton';
-import NavSearch from './NavSearch';
-import Container from '../global/Container';
-function Navbar() {
+'use client';
+import { Input } from '../ui/input';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
+import { useState, useEffect } from 'react';
+
+function NavSearch() {
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const [search, setSearch] = useState(
+    searchParams.get('search')?.toString() || ''
+  );
+  const handleSearch = useDebouncedCallback((value: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (value) {
+      params.set('search', value);
+    } else {
+      params.delete('search');
+    }
+    replace(`/products?${params.toString()}`);
+  }, 300);
+
+  useEffect(() => {
+    if (!searchParams.get('search')) {
+      setSearch('');
+    }
+  }, [searchParams.get('search')]);
   return (
-    <nav className='border-b '>
-      <Container className='flex flex-col sm:flex-row  sm:justify-between sm:items-center flex-wrap gap-4 py-8'>
-        <Logo />
-        <NavSearch />
-        <div className='flex gap-4 items-center '>
-          <CartButton />
-          <LinksDropdown />
-        </div>
-      </Container>
-    </nav>
+    <Input
+      type='search'
+      placeholder='search product...'
+      className='max-w-xs dark:bg-muted '
+      onChange={(e) => {
+        setSearch(e.target.value);
+        handleSearch(e.target.value);
+      }}
+      value={search}
+    />
   );
 }
-export default Navbar;
+export default NavSearch;
