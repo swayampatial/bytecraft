@@ -1,41 +1,23 @@
-'use client';
-import { Input } from '../ui/input';
-import { useSearchParams, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
-import { useState, useEffect } from 'react';
-
-function NavSearch() {
-  const searchParams = useSearchParams();
-  const { replace } = useRouter();
-  const [search, setSearch] = useState(
-    searchParams.get('search')?.toString() || ''
-  );
-  const handleSearch = useDebouncedCallback((value: string) => {
-    const params = new URLSearchParams(searchParams);
-    if (value) {
-      params.set('search', value);
-    } else {
-      params.delete('search');
-    }
-    replace(`/products?${params.toString()}`);
-  }, 300);
-
-  useEffect(() => {
-    if (!searchParams.get('search')) {
-      setSearch('');
-    }
-  }, [searchParams.get('search')]);
+import Container from '../global/Container';
+import CartButton from './CartButton';
+import LinksDropdown from './LinksDropdown';
+import Logo from './Logo';
+import NavSearch from './NavSearch';
+import { Suspense } from 'react';
+function Navbar() {
   return (
-    <Input
-      type='search'
-      placeholder='search product...'
-      className='max-w-xs dark:bg-muted '
-      onChange={(e) => {
-        setSearch(e.target.value);
-        handleSearch(e.target.value);
-      }}
-      value={search}
-    />
+    <nav className='border-b'>
+      <Container className='flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap py-8 gap-4'>
+        <Logo />
+        <Suspense>
+          <NavSearch />
+        </Suspense>
+        <div className='flex gap-4 items-center'>
+          <CartButton />
+          <LinksDropdown />
+        </div>
+      </Container>
+    </nav>
   );
 }
-export default NavSearch;
+export default Navbar;
