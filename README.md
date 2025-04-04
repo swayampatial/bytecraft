@@ -1525,12 +1525,7 @@ export default SingleProductPage;
 - update package.json
 
 ```json
-"scripts": {
-    "dev": "next dev",
-    "build": "npx prisma generate && next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+ 
 ```
 
 - push it up to github
