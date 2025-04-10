@@ -6,10 +6,10 @@ import { formatCurrency } from "@/utils/format";
 import FavoriteToggleButton from "@/components/products/FavoriteToggleButton";
 import AddToCart from "@/components/single-product/AddToCart";
 import ProductRating from "@/components/single-product/ProductRating";
-type sParams=Promise<{ id: string }>
-async function SingleProductPage( props: { params:sParams }): Promise<React.JSX.Element> {
-  const { id } =await props.params;
-  const product = await fetchSingleProduct(id);
+import { useParams } from "next/navigation";
+async function SingleProductPage() {
+  const params = useParams<{ id: string }>();
+  const product = await fetchSingleProduct(params.id);
   const { name, image, company, description, price } = product;
   const dollarsAmount = formatCurrency(price);
   return (
@@ -31,15 +31,15 @@ async function SingleProductPage( props: { params:sParams }): Promise<React.JSX.
         <div>
           <div className="flex gap-x-8 items-center">
             <h1 className="capitalize text-3xl font-bold">{name}</h1>
-            <FavoriteToggleButton productId={id} />
+            <FavoriteToggleButton productId={params.id} />
           </div>
-          <ProductRating productId={id} />
+          <ProductRating productId={params.id} />
           <h4 className="text-xl mt-2">{company}</h4>
           <p className="mt-3 text-md bg-muted inline-block p-2 rounded-md">
             {dollarsAmount}
           </p>
           <p className="mt-6 leading-8 text-muted-foreground">{description}</p>
-          <AddToCart productId={id} />
+          <AddToCart productId={params.id} />
         </div>
       </div>
     </section>

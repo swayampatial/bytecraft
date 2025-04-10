@@ -1,14 +1,10 @@
 "use client";
 import ProductsContainer from "@/components/products/ProductsContainer";
+import { useParams } from "next/navigation";
 
-
-type productParams = Promise<{
-  layout?: string;
-  search?: string;
-}>;
-
-async function ProductsPage(props: { params: productParams }) {
-  const { layout, search } = await props.params;
+function ProductsPage() {
+  const params = useParams<{ layout: string; search: string }>();
+  const { layout, search } = params;
   return <ProductsContainer layout={layout || "grid"} search={search || ""} />;
 }
-export default ProductsPage;
+export default ProductsPage;
