@@ -1,14 +1,13 @@
-"use client";
-import ProductsContainer from "@/components/products/ProductsContainer";
+import ProductsContainer from '@/components/products/ProductsContainer';
 
+function ProductsPage({
+  searchParams,
+}: {
+  searchParams: { layout?: string; search?: string };
+}) {
+  const layout = searchParams.layout || 'grid';
+  const search = searchParams.search || '';
 
-type productParams = Promise<{
-  layout?: string;
-  search?: string;
-}>;
-
-async function ProductsPage(props: { params: productParams }) {
-  const { layout, search } = await props.params;
-  return <ProductsContainer layout={layout || "grid"} search={search || ""} />;
+  return <ProductsContainer layout={layout} search={search} />;
 }
-export default ProductsPage;
+export default ProductsPage;
