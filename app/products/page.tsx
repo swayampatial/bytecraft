@@ -1,13 +1,24 @@
-import ProductsContainer from "@/components/products/ProductsContainer";
+"use client";
+  import ProductsContainer from "@/components/products/ProductsContainer";
+  import { useState } from "react";
 
-function ProductsPage({
-  searchParams,
-}: {
-  searchParams: { layout?: string; search?: string };
-}) {
-  const layout = searchParams.layout || "grid";
-  const search = searchParams.search || "";
+  async function ProductsPage({
+    searchParams,
+  }: {
+    searchParams: { layout?: string; search?: string };
+  }) {
+    const [layout, setLayout] = useState("grid");
+    const [search, setSearch] = useState("");
+    const getParams = async () => {
+      const { layout, search } = await searchParams;
+      return { layout, search };
+    };
+    (async () => {
+      const { layout, search } = await getParams();
+      if (layout) setLayout(layout);
+      if (search) setSearch(search);
+    })();
 
-  return <ProductsContainer layout={layout} search={search} />;
-}
-export default ProductsPage;
+    return <ProductsContainer layout={layout} search={search} />;
+  }
+  export default ProductsPage;
