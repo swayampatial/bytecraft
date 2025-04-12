@@ -7,4 +7,4 @@ function AddToCart({ productId }: { productId: string }) {
     </Button>
   );
 }
-export default AddToCart;  
+export default AddToCart;
