@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2632e271-8146-483f-90d1-955fe38cdfaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +44,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "npm.Next.js: server-side.executor": "Run",
+    "npm.Next.js: server-side.executor": "Debug",
     "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
     "ts.external.directory.path": "C:\\Users\\swaya\\OneDrive\\Desktop\\store\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -87,6 +89,7 @@
       <workItem from="1744944351697" duration="6705000" />
       <workItem from="1744970969132" duration="56000" />
       <workItem from="1744971111687" duration="130000" />
+      <workItem from="1744977741486" duration="6202000" />
     </task>
     <servers />
   </component>
