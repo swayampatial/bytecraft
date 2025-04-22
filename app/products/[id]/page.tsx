@@ -51,3 +51,4 @@ export default async function SingleProductPage({ params }: Props) {
     </section>
   );
 }
+         
