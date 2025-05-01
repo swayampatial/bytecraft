@@ -11,9 +11,7 @@ export default [
         project: './tsconfig.json',
       },
     },
-    plugins: {
-      '@typescript-eslint': tseslint,
-    },
+   
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
