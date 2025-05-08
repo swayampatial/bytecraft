@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { LuShoppingCart } from 'react-icons/lu';
 import Link from 'next/link';
-async function CartButton() {
+ function CartButton(props:{
+  items:number
+}) {
   // temp
   const numItemsInCart = 9;
   return (
@@ -13,8 +15,8 @@ async function CartButton() {
     >
       <Link href='/cart'>
         <LuShoppingCart />
-        <span className='absolute -top-3 -right-3 bg-primary text-white rounded-full h-6 w-6 flex items-center justify-center text-xs'>
-          {numItemsInCart}
+        <span className='absolute -top-3 -right-3 bg-indigo-600 text-white rounded-full h-6 w-6 flex items-center justify-center text-xs'>
+          {props.items}
         </span>
       </Link>
     </Button>

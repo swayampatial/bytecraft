@@ -1,11 +1,23 @@
+"use client";
 import ProductsGrid from "./ProductsGrid";
 import ProductsList from "./ProductsList";
 import { LuLayoutGrid, LuList } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { fetchAllProducts } from "@/utils/actions";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { fetchAllProducts } from "@/utils/actions";
+
+type Product = {
+  id: string;
+  name: string;
+  company: string;
+  description: string;
+  featured: boolean;
+  image: string;
+  price: number;
+  clerkId: string;
+};
 
 function ProductsContainer({
   layout,
@@ -14,20 +26,17 @@ function ProductsContainer({
   layout: string;
   search: string;
 }) {
-  const [products, setProducts] = useState([]);
-  // const products = await fetchAllProducts({ search });
-  console.log(search)
+  const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
-    const getProduct = async () => {
-      const res = await fetch("http://localhost:3000/api/products", {
-        method: "POST",
-        body: JSON.stringify({ search }),
-      });
+    (async () => {
+      console.log(search);
+      const res = await fetch(`/api/prods?search=${search}`);
       const data = await res.json();
-      setProducts(data.products);
-    };
-    getProduct();
-  }, []);
+      console.log(data);
+      setProducts(data);
+    })();
+  }, [search]);
+
   const totalProducts = products.length;
   const searchTerm = search ? `&search=${search}` : "";
   return (
