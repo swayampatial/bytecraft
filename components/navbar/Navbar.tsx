@@ -1,24 +1,28 @@
-import Container from '../global/Container';
-import CartButton from './CartButton';
-import LinksDropdown from './LinksDropdown';
-import Logo from './Logo';
-import NavSearch from './NavSearch';
-import { Suspense } from 'react';
-function Navbar() {
-  return (
-    <nav className='border-b'>
-      <Container className='flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap py-8 gap-4'>
-        <Logo />
-        <Suspense>
-          <NavSearch />
-        </Suspense>
-        <div className='flex gap-4 items-center'>
-          <CartButton />
-          <LinksDropdown />
-        </div>
-      </Container>
-    </nav>
-  );
-}
+// "use client";
+// import { CartItem, useCart } from "../CartContext";
+// import Container from "../global/Container";
+// import CartButton from "./CartButton";
+// import LinksDropdown from "./LinksDropdown";
+// import Logo from "./Logo";
+// import NavSearch from "./NavSearch";
+// import { Suspense, useEffect, useState } from "react";
+// function Navbar() {
+//   const { cart } = useCart();
+//   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+//   return (
+//     <nav className="border-b">
+//       <Container className="flex  sm:flex-row justify-between sm:items-center flex-wrap py-8 gap-4">
+//         <Logo />
+//         <Suspense>
+//           <NavSearch />
+//         </Suspense>
+//         <div className="flex gap-4 items-center">
+//           <CartButton items={totalItems} />
+//           <LinksDropdown />
+//         </div>
+//       </Container>
+//     </nav>
+//   );
+// }
   
-export default Navbar;
+// export default Navbar;

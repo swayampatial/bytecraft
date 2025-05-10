@@ -1,13 +1,11 @@
-import ProductsContainer from '@/components/products/ProductsContainer';
+"use client";
+import ProductsContainer from "@/components/products/ProductsContainer";
+import { useParams, useSearchParams } from "next/navigation";
 
-function ProductsPage({
-  searchParams,
-}: {
-  searchParams: { layout?: string; search?: string };
-}) {
-  const layout = searchParams.layout || 'grid';
-  const search = searchParams.search || '';
-
-  return <ProductsContainer layout={layout} search={search} />;
+function ProductsPage() {
+  const params = useSearchParams();
+  const layout = params.get("layout");
+  const search = params.get("search");
+  return <ProductsContainer layout={layout || "grid"} search={search || ""} />;
 }
 export default ProductsPage;

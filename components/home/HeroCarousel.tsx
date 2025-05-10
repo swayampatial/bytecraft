@@ -16,13 +16,13 @@ const carouselImages = [hero1, hero2, hero3, hero4];
 
 function HeroCarousel() {
   return (
-    <div className='hidden lg:block'>
+    <div className='hidden border-transparent lg:block'>
       <Carousel>
         <CarouselContent>
           {carouselImages.map((image, index) => {
             return (
-              <CarouselItem key={index}>
-                <Card>
+              <CarouselItem  key={index}>
+                <Card className='border-transparent'>
                   <CardContent className='p-2'>
                     <Image
                       src={image}
