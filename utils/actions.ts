@@ -1,5 +1,5 @@
-import db from '@/utils/db';
-import { redirect } from 'next/navigation';
+import db from "@/utils/db";
+import { redirect } from "next/navigation";
 
 export const fetchFeaturedProducts = async () => {
   const products = await db.product.findMany({
@@ -10,19 +10,18 @@ export const fetchFeaturedProducts = async () => {
   return products;
 };
 
-export const fetchAllProducts = ({ search = '' }: { search: string }) => {
-  return db.product.findMany({
+async function fetchAllProducts({ search = "" }: { search: string }) {
+  return await db.product.findMany({
     where: {
       OR: [
-        { name: { contains: search, mode: 'insensitive' } },
-        { company: { contains: search, mode: 'insensitive' } },
+        { name: { contains: search, mode: "insensitive" } },
+        { company: { contains: search, mode: "insensitive" } },
       ],
     },
-    orderBy: {
-      createdAt: 'desc',
-    },
   });
-};
+}
+
+export { fetchAllProducts };
 export const fetchSingleProduct = async (productId: string) => {
   const product = await db.product.findUnique({
     where: {
@@ -30,7 +29,7 @@ export const fetchSingleProduct = async (productId: string) => {
     },
   });
   if (!product) {
-    redirect('/products');
+    redirect("/products");
   }
   return product;
 };

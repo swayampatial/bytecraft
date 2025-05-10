@@ -34,5 +34,77 @@
     "image": "https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "price": 400,
     "clerkId": "clerkId"
+  },
+  {
+    "name": "wooden stool",
+    "company": "FurniCraft",
+    "description": "A compact and sturdy wooden stool made from premium mango wood. Designed with a natural finish, this versatile piece fits seamlessly in kitchens, study corners, or as a plant stand. Lightweight yet durable, it's perfect for small spaces and everyday use.",
+    "featured": false,
+    "image": "https://m.media-amazon.com/images/I/51eoKWxpEQL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 329,
+    "clerkId": "clerkId"
+  },
+  {
+    "name": "metal floor lamp",
+    "company": "Luxora",
+    "description": "This sleek metal floor lamp features a matte black finish and a minimalist silhouette that complements any modern or industrial-style space. Equipped with an adjustable neck and energy-efficient LED compatibility, it's ideal for reading corners, living rooms, or workspaces.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/818yDyo4ciL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 899,
+    "clerkId": "clerkId"
+  },
+  {
+    "name": "Wakefit Queen Size Bed",
+    "company": "Wakefit",
+    "description": "Built for durability and comfort, the Wakefit Queen Size Bed features an engineered wood frame with a sleek walnut finish. Designed with a headboard and ample under-bed storage, it pairs perfectly with modern and minimalist bedrooms. Easy to assemble and built to last.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/81ouFuSvc3L._SX425_.jpg",
+    "price": 11999,
+    "clerkId": "clerkId"
+  },
+  {
+    "name": "Sofa-cum-Bed",
+    "company": "UrbanStyle",
+    "description": "This compact and versatile sofa-cum-bed is perfect for small apartments or guest rooms. Upholstered in soft, breathable fabric with a fold-out design, it easily transforms from a stylish two-seater into a cozy single bed. Ideal for modern urban living without compromising on comfort.",
+    "featured": false,
+    "image": "https://m.media-amazon.com/images/I/81D+rLhAEbL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 3800,
+    "clerkId": "clerkId"
+  },
+  {
+    "name": "3-Tier Engineered Wood Storage",
+    "company": "FurniCraft",
+    "description": "This 3-tier storage unit is crafted from high-quality engineered wood, offering both style and functionality. With a sleek matte finish and compact vertical design, it’s perfect for organizing books, decor items, or office supplies. Ideal for bedrooms, living rooms, or study areas.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/71I7MFJVIRL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 1799,
+    "clerkId": "clerkId"
+  },
+  {
+    "name": "Inflatable Air Sofa",
+    "company": "Comfora",
+    "description": "Lightweight, portable, and incredibly comfortable, this inflatable air sofa is perfect for both indoor lounging and outdoor adventures. Made from durable, waterproof PVC material, it inflates in minutes and folds down to a compact size for easy storage and transport.",
+    "featured": false,
+    "image": "https://m.media-amazon.com/images/I/61puZN7r1EL._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 2000,
+    "clerkId": "clerkId"
+  },{
+    "name": "Cushion Lounge",
+    "company": "CozyNest",
+    "description": "Designed for ultimate relaxation, this cushion lounge features plush padding and ergonomic support. Upholstered in soft-touch fabric with a minimalist design, it’s perfect for reading, meditating, or adding a cozy touch to any corner of your home.",
+    "featured": true,
+    "image": "https://m.media-amazon.com/images/I/61Ljqgsat6L._AC_UL480_FMwebp_QL65_.jpg",
+    "price": 1100,
+    "clerkId": "clerkId"
+  },{
+    "name": "Wakefit Mattress",
+    "company": "Wakefit",
+    "description": "Wakefit’s mattress offers optimal support and comfort with its high-density foam, designed to provide a perfect balance between softness and firmness. Ideal for a restful night’s sleep, this mattress also comes with a 7-year warranty for peace of mind. The mattress contours to your body, ensuring a comfortable sleep throughout the night.",
+    "featured": true,
+    "image": "https://images-eu.ssl-images-amazon.com/images/I/9151tnEqRkL._AC_UL165_SR165,165_.jpg",
+    "price": 6500,
+    "clerkId": "clerkId"
   }
+  
+  
 ]
